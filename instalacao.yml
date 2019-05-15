@@ -17,7 +17,7 @@ OU
  remote_user: root
  tasks:
   -name: "Instalando os pre-requisitos CookBook"
-   apt: name={{ item }} state=present   "I am doing one for, to run my items.."
+   apt: name={{ item }} state=present   "I am doing one for (like python) , to run my items.."
    with_items:
       -apache2
       -mysql
