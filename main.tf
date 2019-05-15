@@ -1,16 +1,28 @@
+
 provider "scaleway" {
-  SCALEWAY_ORGANIZATION = "${var.SCALEWAY_ORGANIZATION}"
-  SCALEWAY_TOKEN        = "${var.SCALEWAY_TOKEN}"
   region = "${var.region}"
+  organization = "${var.org}"
+  token = "${var.tok}"
 }
 
+data "scaleway_image" "terraformclarisse" {
+  architecture = "x86_64"
+  name         = "Ubuntu Bionic"
+}
 
-resource "scaleway_server" "terrclarisseana" {
-  name  = "terrclarisseana"
-  image = "27452e61-310e-4fe5-93af-0a0bdf4c20a6"
+resource "scaleway_server" "terraformclarisse" {
+  name  = "terraformclarisse"
+  image = "${data.scaleway_image.terraformclarisse.id}"
   type  = "START1-S"
 }
-
 resource "scaleway_ip" "ip" {
-  server = "${scaleway_server.terrclarisseana.id}"
+  server = "${scaleway_server.terraformclarisse.id}"
 }
+
+
+resource "scaleway_volume" "terraformclarisse" {
+  name       = "terraformclarissevolume"
+  size_in_gb = 50
+  type       = "l_ssd"
+}
+
