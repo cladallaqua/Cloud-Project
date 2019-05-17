@@ -1,9 +1,9 @@
 # Building Ecommerce with Magento 
-Group: Clarisse Dallaqua and Ana Beatriz_
+Group: Clarisse Dallaqua and Ana Beatriz
 
 ### **ANSIBLE PART**
 
-*Step by Step:*_
+*Step by Step:*
 - Create a *playbooks/* directory_
 - Ansible file *instalacao.yml*, this file contain all the steps that it was found in a cookbook to build and download the magento with composer, it was used task to run._
 - The command used to execute instalacao.yml is :_ 
