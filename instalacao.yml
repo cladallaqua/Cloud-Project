@@ -39,3 +39,21 @@
 
   - name: installing mysql
     raw:  apt-get update && apt-get -y install mysql-server
+ 
+ # Installing Magento
+  - name: installing curl
+    raw: apt-get -y install curl
+
+  - name: installing composer
+    raw: curl -sS https://getcomposer.org/installer | php
+
+  - name: enable apache
+    raw: a2enmod rewrite
+
+
+  - name: changing directory
+    raw: cd /var/www/html
+  - name: download
+    raw: wget https://github.com/magento/magento2/archive/2.0.0.zip
+  - name: composer instalar
+    raw: cd /var/www/html/ && composer install
