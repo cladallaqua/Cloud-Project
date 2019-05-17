@@ -12,9 +12,30 @@
     raw: apt-get -y install nginx
 
 
-  - name: installing php
-    raw: apt-get -y install php
+  - name: installing php7.2
+    raw: apt-get -y install php7.2
+  - name: installing php7.2-fpm
+    raw: apt-get -y install php7.2-fpm
+  - name: installing php7.2-dev
+    raw: apt-get -y install php7.2-dev
+  - name: installing php7.2-curl
+    raw: apt-get -y install php7.2-curl
+  - name: installing php7.2-cli
+    raw: apt-get -y install php7.2-cli
+  - name: installing php7.2-mysql
+    raw: apt-get -y install php7.2-mysql
+  - name: installing php7.2-gd
+    raw: apt-get -y install php7.2-gd
+  - name: installing php7.2-xsl
+    raw: apt-get -y install php7.2-xsl
+  - name: restart php7.2
+    raw: service php7.2-fpm restart
+
+  - name: disable apache
+    raw: service apache2 stop && service nginx start
+  - name: restart your NGINX and PHP-PFM server
+    raw: service nginx restart && service php7.2-fpm restart
 
 
   - name: installing mysql
-    raw: apt-get -y install mysql-server
+    raw:  apt-get update && apt-get -y install mysql-server
