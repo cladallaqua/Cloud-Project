@@ -1,5 +1,5 @@
 # Cloud-Project
 
-*teste*
+teste
 teste
 clarisse
