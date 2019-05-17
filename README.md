@@ -1,4 +1,4 @@
-# Building Ecommerce with Magento_
+# Building Ecommerce with Magento _
 Group: Clarisse Dallaqua and Ana Beatriz_
 
 ### **ANSIBLE PART**
