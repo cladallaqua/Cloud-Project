@@ -1,29 +1,20 @@
 ---
--name :" Instalando os pre-requisitod do CookBook Magento"
- hosts : 51.158.187.107
+- hosts: all
+  user: root
+  gather_facts: False
+  pre_tasks:
 
- roles:
-   -apache2
-   -mysql
-   -nginx
-   -php-fpm
-   -magento
+  - name: installing apache2
+    raw: apt-get -y install apache2
 
 
-OU
-
----
--hosts: 51.158.187.107
- remote_user: root
- tasks:
-  -name: "Instalando os pre-requisitos CookBook"
-   apt: name={{ item }} state=present   "I am doing one for (like python) , to run my items.."
-   with_items:
-      -apache2
-      -mysql
-      -nginx
-      -php-fpm
-      -magento
+  - name: installing nginx
+    raw: apt-get -y install nginx
 
 
+  - name: installing php
+    raw: apt-get -y install php
 
+
+  - name: installing mysql
+    raw: apt-get -y install mysql
