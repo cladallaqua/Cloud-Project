@@ -5,7 +5,8 @@ Group: Clarisse Dallaqua and Ana Beatriz
 
 *Step by Step:*
 - Create a *playbooks/* directory_
-- Ansible file *instalacao.yml*, this file contain all the steps that it was found in a cookbook to build and download the magento with composer, it was used task to run. Basicallyy we need the apache2, nginx, php, mysql for be able to run the composer.
+- Ansible file *instalacao.yml*, this file contain all the steps that it was found in a cookbook to build and download the magento with composer. Basically we need the apache2, nginx, php, mysql for be able to run the composer. We did in the both ways, first doing in the terminal with the cookbook commands and after with a playbook using ansible tool.
+
 - The command used to execute instalacao.yml is : 
 ```
 ansible-playbook instalacao.yml
