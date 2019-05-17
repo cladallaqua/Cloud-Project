@@ -17,4 +17,4 @@
 
 
   - name: installing mysql
-    raw: apt-get -y install mysql
+    raw: apt-get -y install mysql-server
