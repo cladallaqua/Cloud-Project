@@ -4,33 +4,27 @@
   gather_facts: False
   pre_tasks:
 
-  - name: installing apache2
-    raw: apt-get -y install apache2
+  - name: install all the required softwares
+    apt:
+       name:
+         - php7.2
+         - php7.2-mysql
+         - php7.2-fpm
+         - php7.2-dev
+         - php7.2-curl
+         - php7.2-cli
+         - php7.2-gd
+         - php7.2-xsl
+         - apache2
+         - nginx
+         - mysql-server
+         - curl
+       state: present
+       update_cache: true
 
-
-  - name: installing nginx
-    raw: apt-get -y install nginx
-
-
-  - name: installing php7.2
-    raw: apt-get -y install php7.2
-  - name: installing php7.2-fpm
-    raw: apt-get -y install php7.2-fpm
-  - name: installing php7.2-dev
-    raw: apt-get -y install php7.2-dev
-  - name: installing php7.2-curl
-    raw: apt-get -y install php7.2-curl
-  - name: installing php7.2-cli
-    raw: apt-get -y install php7.2-cli
-  - name: installing php7.2-mysql
-    raw: apt-get -y install php7.2-mysql
-  - name: installing php7.2-gd
-    raw: apt-get -y install php7.2-gd
-  - name: installing php7.2-xsl
-    raw: apt-get -y install php7.2-xsl
   - name: restart php7.2
     raw: service php7.2-fpm restart
-    
+
   - name: enable mod_proxy
     raw: a2enmod proxy_fcgi
   - name: new port
@@ -44,19 +38,11 @@
     raw: service nginx restart && service php7.2-fpm restart
 
 
-  - name: installing mysql
-    raw:  apt-get update && apt-get -y install mysql-server
- 
- # Installing Magento
-  - name: installing curl
-    raw: apt-get -y install curl
-
   - name: installing composer
     raw: curl -sS https://getcomposer.org/installer | php
 
   - name: enable apache
     raw: a2enmod rewrite
-
 
   - name: changing directory
     raw: cd /var/www/html
