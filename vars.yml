@@ -1,0 +1,3 @@
+mage_db_name: magento
+mage_db_user: magento
+mage_db_password: secret
