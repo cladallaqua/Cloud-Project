@@ -30,6 +30,13 @@
     raw: apt-get -y install php7.2-xsl
   - name: restart php7.2
     raw: service php7.2-fpm restart
+    
+  - name: enable mod_proxy
+    raw: a2enmod proxy_fcgi
+  - name: new port
+    raw: sed -i "s/listen =.*/listen = 127.0.0.1:9000/" /etc/php/7.2/fpm/pool.d/www.conf
+  - name: php restart
+    raw: service php7.2-fpm restart
 
   - name: disable apache
     raw: service apache2 stop && service nginx start
