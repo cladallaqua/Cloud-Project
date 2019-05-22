@@ -2,7 +2,7 @@
 {
   "builders": [
     {
-      "organization_id": "{{ user `organization_id` }}",
+      "organization_id": "${var.SCALEWAY_ORGANIZATION}",
       "api_token": "{{ user `api_token` }}",
       "server_name": "cloud-courses",
       "image_name": "cloud-courses-image",
