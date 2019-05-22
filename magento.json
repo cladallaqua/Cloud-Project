@@ -2,11 +2,11 @@
 {
   "builders": [
     {
-      "organization_id": "${var.SCALEWAY_ORGANIZATION}",
+      "organization_id": "{{ user `SCALEWAY_ORGANIZATION` }}",
       "api_token": "{{ user `api_token` }}",
-      "server_name": "cloud-courses",
-      "image_name": "cloud-courses-image",
-      "snapshot_name": "cloud-courses-snapshot",
+      "server_name": "magento",
+      "image_name": "magento-image",
+      "snapshot_name": "magento-snapshot",
       "type": "scaleway",
       "image": "{{ user `image` }}",
       "region": "par1",
