@@ -1,0 +1,37 @@
+
+{
+  "builders": [
+    {
+      "organization_id": "{{ user `organization_id` }}",
+      "api_token": "{{ user `api_token` }}",
+      "server_name": "cloud-courses",
+      "image_name": "cloud-courses-image",
+      "snapshot_name": "cloud-courses-snapshot",
+      "type": "scaleway",
+      "image": "{{ user `image` }}",
+      "region": "par1",
+      "commercial_type": "START1-S",
+      "ssh_private_key_file": "{{ user `ssh_private` }}",
+      "ssh_username": "root"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "ansible",
+      "playbook_file": "playbook.yml",
+      "user":"root",
+      "extra_arguments": [
+        "-e",
+        "ansible_python_interpreter=/usr/bin/python3"
+      ]
+    }
+  ],
+
+  "variables": {
+    "organization_id": "{{env `SCALEWAY_ORGANIZATION`}}",
+    "api_token": "{{env `SCALEWAY_API_TOKEN`}}",
+    "image": "f974feac-abae-4365-b988-8ec7d1cec10d",
+    "ssh_private": "{{env `HOME`}}/.ssh/id_rsa"
+  }
+}
+
