@@ -18,7 +18,7 @@ The hosts file is now at _/etc/ansible/hosts
 *Step by Step:* 
 
 **Terraform file:**  _main.tf_ _variables.tf_
-- The file *main.tf* is responsable to 'build' our server.
+- The file *main.tf* is responsable to 'build' our website.
 - The file *variables.tf* is responsable to declare our variables
 - Create _variables.tfvars_, and put the name of your variables inside:
 ```
