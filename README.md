@@ -40,8 +40,8 @@ org="org_value"
 ### **PACKER PART**
 *Step by Step:*
 
-- We type on .bashrc two commands for store our variables: token and organization ID.
- ```export SCW_TOKEN=token_value```
- ```export SCALEWAY_ORGANIZATION=organizationID_value```
+- We type on .bashrc two commands for store our variables: token and organization ID._
+ ```export SCW_TOKEN=token_value```_
+ ```export SCALEWAY_ORGANIZATION=organizationID_value```_
  
- -Then we created a file "scaleway" with .json extension, that it will be responsable to creat our image of server.
+ -Then we created a file "scaleway" with .json extension, that it will be responsable to creat our image of the server.
